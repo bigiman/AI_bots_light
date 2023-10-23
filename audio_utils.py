@@ -1,13 +1,11 @@
-from common import (
-    os, 
-    time,
-    AudioSegment,
-    play,
-    sounddevice as sd,
-    simpleaudio as sa,
-    numpy as np,
-    wavfile,
-)   
+import os
+import time
+from pydub import AudioSegment
+from pydub.playback import play
+import sounddevice as sd
+import simpleaudio as sa
+import numpy as np
+from scipy.io import wavfile
 
 def record_audio(filename, duration, fs, channels, threshold_db=-30, min_nonsilence_duration=0.1, min_silence_duration=1):
     print("Recording...")

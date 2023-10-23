@@ -1,14 +1,10 @@
-from common import (
-    os,
-    datetime,
-    time,
-    numpy as np,
-    gradio as gr,
-    load_dotenv,
-    record_audio,
-    play_audio_from_file, 
-    play_audio_from_buffer,
-)
+import os
+import datetime
+import time
+import numpy as np
+import gradio as gr
+from dotenv import load_dotenv
+from audio_utils import record_audio, play_audio_from_file, play_audio_from_buffer
 
 
 def speak_mode_action(status, intermezzo):
