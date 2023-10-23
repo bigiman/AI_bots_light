@@ -9,6 +9,11 @@ from scipy.io import wavfile
 import asyncio
 import websockets
 
+async def send_audio_data_websocket(uri, audio_data):
+    async with websockets.connect(uri) as websocket:
+        await websocket.send(audio_data.tobytes())
+# Usage:
+# asyncio.get_event_loop().run_until_complete(send_audio_data_websocket('wss://your_twilio_websocket_uri', audio_data))
 
 async def record_audio_websocket(uri, filename, duration, fs, threshold_db=-30, min_nonsilence_duration=0.1, min_silence_duration=1):
     print("Connecting to the WebSocket...")
