@@ -6,7 +6,6 @@ import gradio as gr
 from dotenv import load_dotenv
 from audio_utils import record_audio, play_audio_from_file, play_audio_from_buffer
 
-
 def speak_mode_action(status, intermezzo):
     global recorded_audio, termination, intermezzo_played
 
